@@ -133,7 +133,7 @@ nav ul li a:hover, a.active{
 .confirmation{
     display: none;
     
-    padding: 100px 50px;
+    padding: 100px 30px;
 }
 .confirmation button{
     display: block;

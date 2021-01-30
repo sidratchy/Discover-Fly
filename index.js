@@ -1,22 +1,23 @@
+
+
+//First Class Increase Handler..........
+ticketCounter('firstClass-increase', 'firstClass-input', true);
+
+//first class Decrease  Handler........
+ticketCounter('firstClass-decrease', 'firstClass-input', false);
+
+
 ///Economy increase Handler......
 
 ticketCounter('economy-increase', 'economy-input', true);
 
 
-///Economy Decrease ......
+///Economy Decrease Handler......
 ticketCounter('economy-decrease', 'economy-input', false);
 
 
-//First Class Increase ..........
-ticketCounter('firstClass-increase', 'firstClass-input', true);
-
-//first class Decrease........
-ticketCounter('firstClass-decrease', 'firstClass-input', false);
-
-
-
 //function for ticket counting.......
-function ticketCounter(eventId, inputId, isIncrease, price) {
+function ticketCounter(eventId, inputId, isIncrease) {
     document.getElementById(eventId).addEventListener('click', function () {
         const ticketInput = document.getElementById(inputId);
 
@@ -33,11 +34,11 @@ function ticketCounter(eventId, inputId, isIncrease, price) {
         document.getElementById(inputId).value = ticketCount;
 
         //Total cost of flight function.......
-        flightCost();
+        flightCost(inputId);
     });
 }
 
-
+///function for total flight cost......
 function flightCost() {
     let firstClassInput = document.getElementById('firstClass-input');
 
@@ -58,14 +59,12 @@ function flightCost() {
     document.getElementById('totalVat').innerText = totalVat;
 
     document.getElementById('total').innerText = total;
-    
-
 
 }
 
 
 
-////
+////function for book now button.....
 function bookNow() {
     document.getElementById('hidden-area').style.display = 'none';
     document.querySelector('.confirmation').style.display = 'block';
@@ -75,9 +74,12 @@ function bookNow() {
     document.getElementById('first').innerText = firstClassInput;
     document.getElementById('economy').innerText = economyInput;
 
-    
+
 }
-function backAgain(){
+
+/// function for back button.....
+function backAgain() {
     document.getElementById('hidden-area').style.display = 'block';
     document.querySelector('.confirmation').style.display = 'none';
+    
 }
